@@ -1,5 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.chrome import options
 import datetime
 import time
 import os
@@ -11,12 +9,9 @@ from Pages.checkout_page import Checkout_Page
 from Pages.Checkout_info import Checkoutinformation
 from Pages.final_overview import Finalpage
 
-#Assign the driver and its options
-driver = webdriver.Chrome()
-driver.maximize_window()
-driver.get("https://www.saucedemo.com/")
+#Assigning driver
+def test_project(driver):
 
-try:
     #Call the pages functions in order to proceed
     #Login to the page
     Login = LoginPage(driver)
@@ -53,6 +48,6 @@ try:
     Final_page.home()
     print("\nReturned to home successfully")
     time.sleep(2)
-except:
-    driver.quit()
-    raise
+
+
+    
